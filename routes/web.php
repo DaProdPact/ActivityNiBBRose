@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ActivityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,23 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-// Create routes that the user navigate in this page
 
-// /                 Redirect to index
-// /user         Redirect to users page
-// /about       Redirect to about
-// /supervisor
-// /employee     This route should redirect also to users page
+Route::controller(ActivityController::class)->group(function(){
 
-Route::get('/', function () {
-    return view('activity1.index');
-});
-Route::get('/user', function () {
-    return view('activity1.user');
-});
-Route::get('/about', function () {
-    return view('activity1.about');
-});
-Route::get('/employee', function () {
-    return view('activity1.user');
-});
+    Route::get('/','index');
+    Route::get('/user','user');
+    Route::get('/about','about');
+    Route::get('/employee','user');
+
+  
+  });
