@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,7 @@ Route::controller(ActivityController::class)->group(function(){
     Route::get('/user','user');
     Route::get('/about','about');
     Route::get('/employee','user');
-
-  
   });
+
+
+Route::get('/employee',[EmployeeController::class,'show']);
